@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: lightblue;
+    height: 800px;
+    width: 1200px;
+}
+
+.yAxis {
+    display: flex;
+    flex-grow: 100;
+    min-height: 0px;
+    min-width: 0px;
+    border: 5px;
+    border-color: red;
+    border-style: solid;  
+}
+
+.block {
+    display: flex;
+    flex-grow: 100;
+    min-height: 0px;
+    min-width: 0px;
+    border: 5px;
+    border-color: yellow;
+    border-style: solid;
+}
