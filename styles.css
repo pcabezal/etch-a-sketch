@@ -1,6 +1,7 @@
 body {
     display: flex;
     justify-content: center;
+    background-color: black;
 }
 
 .mainContainer {
@@ -14,6 +15,7 @@ body {
     height: 800px;
     width: 1200px;
 }
+
 
 .yAxis {
     display: flex;
