@@ -1,7 +1,18 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     background-color: black;
+}
+
+.newGridContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.etchArea {
+    display: flex;
+    justify-content: center;
 }
 
 .mainContainer {
@@ -11,18 +22,19 @@ body {
     border-width: 3px;
     border-style: solid;
     border-radius: 3px;
-    background-color: lightblue;
+    background-color: lightgrey;
     height: 800px;
     width: 1200px;
 }
-
 
 .yAxis {
     display: flex;
     flex-grow: 100;
     min-height: 0px;
     min-width: 0px;
-    border: 1px;
+ /*   border: 1px;
+    border-color: blueviolet;
+    border-style: solid; */
 
 }
 
@@ -31,6 +43,8 @@ body {
     flex-grow: 100;
     min-height: 0px;
     min-width: 0px;
-    border: 1px;
+/*    border: 1px;
+    border-color: yellow;
+    border-style: solid; */
 
 }
