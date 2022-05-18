@@ -23,8 +23,7 @@ body {
     min-height: 0px;
     min-width: 0px;
     border: 1px;
-    border-color: red;
-    border-style: solid;  
+
 }
 
 .block {
@@ -33,6 +32,5 @@ body {
     min-height: 0px;
     min-width: 0px;
     border: 1px;
-    border-color: yellow;
-    border-style: solid;
+
 }
