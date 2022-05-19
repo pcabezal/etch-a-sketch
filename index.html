@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ETCHIN SKETCH</title>
     <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Arbutus' rel='stylesheet'>
+    <link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>
 
+    <div class="header">
+        Sketchy Etcher
+    </div>
 
     <div class ='etchOuter'>
         <div class="etchArea">
@@ -19,15 +24,16 @@
 
     <div class="newGridContainer">
         <input type ='color' id="colorPicker" value="#0000ff">
-        <label for='colorPicker'>Pick Draw Color</label>
-        <button onclick="colorBlockActivate('random')">Rainbow Road</button>
-        <button onclick="newGridButton()">Clear Grid</button>
-        <button onclick="colorBlockActivate('Shader')">Shader</button>
-
+        <label for='colorPicker'>Draw Color</label>
+        <button onclick="colorBlockActivate('random')" id="rainButton">Rainbow Road</button>
+        <button onclick="colorBlockActivate('eraser')">Eraser</button>
+        <button onclick="newGridButton('Enter new grid size, nothing over 100 please.')">Clear Grid</button>
     </div>
+
+    <footer class ='footer'>
+        Copyright ©2022 <a href="https://github.com/pcabezal" target="_blank">pcabezal</a>
+    </footer>
         
-
-
 <script src="script.js" defer></script>
 </body>
 </html>

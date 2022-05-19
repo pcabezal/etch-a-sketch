@@ -14,11 +14,13 @@ function createGrid(gridNumber) {
     for (let i=gridNumber; i > 1; i--) {
         mainContainer.appendChild(addyAxis.cloneNode(true));
     }
-    colorBlockActivate('blue');
+    colorBlockActivate('blue');    
 } 
+
 createGrid(50);
 
-//clear etchasketch
+
+//clear etch area
 function removeAllChildNodes() {
     while (addyAxis.firstChild) {
         addyAxis.removeChild(addyAxis.firstChild);
@@ -28,11 +30,12 @@ function removeAllChildNodes() {
     }
 }
 
-function newGridButton() {
+function newGridButton(promptWords) {
     removeAllChildNodes();
-    let userGrid = prompt('Enter new grid size, nothing over 100 please.');
+    let userGrid = prompt(promptWords);
     if (userGrid > 100) {
-        let userGrid = prompt(`I'm serious enter something under 100 or we could all die`)
+        newGridButton(`I'm serious enter 100 or less or we could all die`);
+        return;
     }
     createGrid(userGrid);
 }
@@ -41,54 +44,33 @@ function randomColor() {
     return '#' + Math.floor(Math.random()*16777215).toString(16);
 } 
 
- //color blocks old
-/* function colorBlockActivate() {
-    let block1 = document.querySelectorAll('.block');
-    for(let i = 0; i < block1.length; i++) {
-        block1[i].addEventListener("mouseenter", colorBlock(i));
-    }
-    function colorBlock(i) {
-    return function() {
-        //   console.log("you entered region number " + i);
-        block1[i].style.backgroundColor = 'red';
-        };
-    } 
-} */
-
 function colorBlockActivate(choice) {
     let block1 = document.querySelectorAll('.block');
     for(let i = 0; i < block1.length; i++) {
         block1[i].addEventListener("mouseover", colorBlock(i));
     }
+
     function colorBlock(i) {
         if (choice === 'random') { 
             return function() {
                 block1[i].style.backgroundColor = randomColor();
             };
-        } else if (choice === 'shader') {
+        } else if (choice === 'eraser') {
             return function() {
-                console.log(window.getComputedStyle( block1[i] ,null).getPropertyValue('background-color'))
-                // myDivObj = document.getElementById("myDivID")
-                //let myDivObj = window.getComputedStyle(block1[i]).backgroundColor;
-                //console.log("you entered region number " + i);
-                //console.log(' stupid mydivobj = ' + myDivObj);
-                //console.log(block1[i]);
-                // block1[i].style.backgroundColor = 'hsl(0,0%,0%)';
+                block1[i].style.backgroundColor = 'lightgrey';
             };
-            
         } else {
             return function() {
                 block1[i].style.backgroundColor = choice;
             };
         } 
-
     }
 }
 
-colorPicker.addEventListener('change', changeColorPicker, false);
+colorPicker.addEventListener('change', changeColorPicker);
 
-function changeColorPicker(event) {
-    colorBlockActivate(event.target.value);
+function changeColorPicker(e) {
+    colorBlockActivate(e.target.value);
 }
 
 
