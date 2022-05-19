@@ -3,9 +3,27 @@ body {
     flex-direction: column;
     justify-content: center;
     background-color: black;
+    color: white;
 }
 
 .newGridContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+button {
+    font-size: 18pt;
+    border-radius: 1rem;
+}
+
+#colorPicker {
+    margin-right: 35px;
+    transform: scale(2);
+}
+
+.etchOuter {
     display: flex;
     justify-content: center;
 }
@@ -13,6 +31,14 @@ body {
 .etchArea {
     display: flex;
     justify-content: center;
+    padding: 100px;
+    background-color: hsl(360, 80%, 40%);
+    border-radius: 30px;
+}
+
+button {
+    padding: 15px;
+    margin: 25px;
 }
 
 .mainContainer {
@@ -32,10 +58,6 @@ body {
     flex-grow: 100;
     min-height: 0px;
     min-width: 0px;
- /*   border: 1px;
-    border-color: blueviolet;
-    border-style: solid; */
-
 }
 
 .block {
@@ -43,8 +65,4 @@ body {
     flex-grow: 100;
     min-height: 0px;
     min-width: 0px;
-/*    border: 1px;
-    border-color: yellow;
-    border-style: solid; */
-
 }

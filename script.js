@@ -14,7 +14,7 @@ function createGrid(gridNumber) {
     for (let i=gridNumber; i > 1; i--) {
         mainContainer.appendChild(addyAxis.cloneNode(true));
     }
-    colorBlockActivate();
+    colorBlockActivate('blue');
 } 
 createGrid(50);
 
@@ -58,14 +58,14 @@ function randomColor() {
 function colorBlockActivate(choice) {
     let block1 = document.querySelectorAll('.block');
     for(let i = 0; i < block1.length; i++) {
-        block1[i].addEventListener("mouseenter", colorBlock(i));
+        block1[i].addEventListener("mouseover", colorBlock(i));
     }
     function colorBlock(i) {
         if (choice === 'random') { 
             return function() {
                 block1[i].style.backgroundColor = randomColor();
             };
-        } else if (choice === 'increase') {
+        } else if (choice === 'shader') {
             return function() {
                 console.log(window.getComputedStyle( block1[i] ,null).getPropertyValue('background-color'))
                 // myDivObj = document.getElementById("myDivID")
@@ -78,12 +78,19 @@ function colorBlockActivate(choice) {
             
         } else {
             return function() {
-                block1[i].style.backgroundColor = 'blue';
+                block1[i].style.backgroundColor = choice;
             };
         } 
 
     }
 }
+
+colorPicker.addEventListener('change', changeColorPicker, false);
+
+function changeColorPicker(event) {
+    colorBlockActivate(event.target.value);
+}
+
 
 
 
